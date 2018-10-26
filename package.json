@@ -1,0 +1,37 @@
+{
+  "name": "baduk-bot",
+  "version": "0.0.1",
+  "description": "A react-swarm-ui version of Go(Baduk), that is played using SwarmUI Zooid Bots",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "clean": "rm -rf node_modules ./dist",
+    "start": "node ./dist/index.js",
+    "test": "flow check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nheyn/baduk-bot.git"
+  },
+  "author": "Nick Heyn <nick@heyn.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nheyn/baduk-bot/issues"
+  },
+  "homepage": "https://github.com/nheyn/baduk-bot#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "flow-bin": "^0.83.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.2",
+    "react": "^16.6.0",
+    "react-swarm-ui": "*",
+    "ws": "^6.1.0"
+  }
+}
