@@ -1,5 +1,5 @@
 # Baduk Bots Server
-*A react-swarm-ui version of Go(Baduk), that is played using [Baduk Zooid Bots](https://github.com/supersurfer92/SwarmUI-BadukBots)*
+*A [react-swarm-ui](https://github.com/nheyn/react-swarm-ui) version of Go(Baduk), that is played using [Baduk Zooid Bots](https://github.com/supersurfer92/SwarmUI-BadukBots)*
 
 ### Install
 To connect to a swarm, the [SwarmUI](https://github.com/supersurfer92/SwarmUI-BadukBots) repo needs to be downloaded. It contains the required ZooidManagerV2 software in the /Software/Applications/ folder.
