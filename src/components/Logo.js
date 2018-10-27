@@ -35,10 +35,13 @@ export default function Logo(props: Props) {
 function OuterBox({ width, height, right, bottom, children }) {
   return (
     <>
-      <zooid des={[right, bottom]} col={blue} />
-      <zooid des={[right, right + width]} col={blue} />
-      <zooid des={[right + width, right]} col={blue} />
-      <zooid des={[right + width, right + width]} col={blue} />
+      <zooid destination={{ right, bottom }} color={blue} />
+      <zooid destination={{ right, bottom: bottom + height }} color={blue} />
+      <zooid destination={{ right: right + width, bottom }} color={blue} />
+      <zooid
+        destination={{ right: right + width, bottom: bottom + height }}
+        color={blue}
+      />
       {children}
     </>
   );
@@ -50,9 +53,12 @@ function InnerBox({ width, height, right, bottom }) {
 
   return (
     <>
-      <zooid des={[right, bottom + yOffset]} col={blue} />
-      <zooid des={[right + xOffset, bottom]} col={blue} />
-      <zooid des={[right + xOffset, bottom + yOffset]} col={blue} />
+      <zooid destination={{ right, bottom: bottom + yOffset }} color={blue} />
+      <zooid destination={{ right: right + xOffset, bottom }} color={blue} />
+      <zooid
+        destination={{ right: right + xOffset, bottom: bottom + yOffset }}
+        color={blue}
+      />
     </>
   );
 }
@@ -60,10 +66,13 @@ function InnerBox({ width, height, right, bottom }) {
 function Stones({ width, height, right, bottom }) {
   return (
     <>
-      <zooid des={[right, bottom]} col={black} />
-      <zooid des={[right, bottom + height]} col={white} />
-      <zooid des={[right + width, bottom]} col={white} />
-      <zooid des={[right + width, bottom + height]} col={black} />
+      <zooid destination={{ right, bottom }} color={black} />
+      <zooid destination={{ right, bottom: bottom + height }} color={white} />
+      <zooid destination={{ right: right + width, bottom }} color={white} />
+      <zooid
+        destination={{ right: right + width, bottom: bottom + height }}
+        color={black}
+      />
     </>
   )
 }
