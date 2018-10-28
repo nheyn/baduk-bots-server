@@ -6,6 +6,7 @@ type Props = {
   height: number,
   bottom: number,
   right: number,
+  onChangePosition?: (zooid: *) => void,
 };
 
 const blue = [0, 0, 255];
@@ -32,10 +33,16 @@ export default function Logo(props: Props) {
   );
 }
 
-function OuterBox({ width, height, right, bottom, children }) {
+function OuterBox(props) {
+  const { width, height, right, bottom, onChangePosition, children } = props;
+
   return (
     <>
-      <zooid destination={{ right, bottom }} color={blue} />
+      <zooid
+        destination={{ right, bottom }}
+        color={blue}
+        onChangePosition={onChangePosition}
+      />
       <zooid destination={{ right, bottom: bottom + height }} color={blue} />
       <zooid destination={{ right: right + width, bottom }} color={blue} />
       <zooid

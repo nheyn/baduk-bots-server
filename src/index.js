@@ -2,15 +2,10 @@
 import React from 'react';
 import { render } from 'react-swarm-ui';
 
-import Logo from './components/Logo'
+import App from './components/App'
 
 render(
-  <Logo
-    width={0.2}
-    height={0.2}
-    right={0.05}
-    bottom={0.05}
-  />,
+  <App />,
   'http://localhost:9092',
   () => console.log('running...')
 );
