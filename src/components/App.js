@@ -1,12 +1,13 @@
 // @flow
 import React from 'react';
 
+import Game from './Game';
 import Logo from './Logo';
 
 type Props = {};
 type State = {
-  right: number,
-  bottom: number,
+  hasLoaded: boolean,
+  hasGameStarted: boolean,
 };
 
 export default class App extends React.Component<Props, State> {
@@ -14,27 +15,33 @@ export default class App extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      right: 0.05,
-      bottom: 0.05,
+      hasLoaded: false,
+      hasGameStarted: false,
     };
   }
 
-  render() {
-    const { right, bottom } = this.state;
+  componentDidMount() {
+    //TODO, figure out beter way todo this
+    setTimeout(() => {
+      this.setState({ hasLoaded: true  }, () => console.log('loaded'));
+    }, 2000)
+  }
 
-    return (
+  render() {
+    const { hasLoaded, hasGameStarted } = this.state;
+
+    return hasGameStarted?
+      <Game stonesPerPlayer={15} />:
       <Logo
         width={0.2}
         height={0.2}
-        right={right}
-        bottom={bottom}
-        onChangePosition={(zooid) => {
-          this.setState(({ right, bottom }) => ({
-            right: zooid.pos[0],
-            bottom: zooid.pos[1],
-          }));
-        }}
-      />
-    );
+        right={0.2}
+        bottom={0.2}
+        onChangePosition={
+          hasLoaded?
+            () => this.setState({ hasGameStarted: true }):
+            undefined
+        }
+      />;
   }
 }
