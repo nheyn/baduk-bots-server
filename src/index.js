@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
-import { render } from 'react-swarm-ui';
+import { render, createDocument } from 'react-swarm-ui';
 
-import App from './components/App'
+import App from './components/App';
 
 render(
   <App />,
-  'http://localhost:9092',
+  createDocument('http://localhost:9092'),
   () => console.log('running...')
 );
